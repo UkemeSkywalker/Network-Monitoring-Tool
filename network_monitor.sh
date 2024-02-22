@@ -19,13 +19,6 @@ LOG_FILE="./logs/network_monitor.log"
 recipient="ukemzyreloaded@gmail.com"
 subject="Network Monitor Alert: Node Unreachable"
 
-# Ping a list of specified nodes and display the status of each node (reachable or unreachable).
-# Check if input is provided
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 [node1] [node2] ..."
-    exit 1
-fi
-
 
 # Function to log the timestamp and node status
 log_status() {
@@ -49,7 +42,7 @@ send_email() {
 
     payload=$(cat <<EOF
         {
-        "from": "Guy <onboarding@resend.dev>",
+        "from": "Supra Oracle <onboarding@resend.dev>",
         "to": ["$recipient"],
         "subject": "$subject",
         "text": "$message"
@@ -57,15 +50,18 @@ send_email() {
 EOF
     )
 
+
      # Send the email using curl
     curl -X POST 'https://api.resend.com/emails' \
-     -H 'Authorization: Bearer re_TP1WuRGm_3Moc3sM6atmk9Aip1ufaWWko' \
+     -H 'Authorization:  Bearer change_this_to_api_key' \
      -H 'Content-Type: application/json' \
      -d "$payload"
 
 }
 
 
+
+# Ping a list of specified nodes and display the status of each node (reachable or unreachable).
 # Loop through each argument (node)
 for node in "$@"; do
     # Ping the node and capture the output
