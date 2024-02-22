@@ -7,6 +7,7 @@ unreachable).
 2. Log the timestamp and status of each node in a file for historical analysis.
 3. Provide an option to send an email notification if any node becomes unreachable.
 
+![node alert](./node_alert.JPG)
 
 ### Set-up
 
