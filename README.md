@@ -11,13 +11,13 @@ unreachable).
 
 ### Set-up
 
-1. Visit (resend.com)[https://resend.com/], create an free account
-2. create an API key
-3. Change the recipient to the email address you registered on resend
+1. Visit (resend.com)[https://resend.com/], create a free account
+2. Create an API key on the platform
+3. On line 19, change the recipient to the email address you registered on resend
 4. On line 56, add your Api Key
-5. Add execute permissions to the script `chmod +x network_monitor.sh`
+5. Add execute permissions to the script: Run `chmod +x network_monitor.sh`
 
-### Run Script
+### Execute Script
 
 ```
     ./network_monitor.sh ukeme.us
